@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        body,
+        main,
+        div {
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: grid;
+        }
+
+        body {
+            background: radial-gradient(circle at 55% 55%,
+                    hsl(0, 100%, 50%),
+                    hsl(30, 100%, 50%),
+                    hsl(60, 100%, 50%),
+                    hsl(140, 100%, 50%),
+                    hsl(190, 100%, 50%),
+                    hsl(260, 100%, 50%),
+                    hsl(330, 100%, 50%)40%);
+        }
+
+        svg {
+            width: 100vmin;
+            height: 100vmin;
+            margin: auto;
+        }
+
+        main {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        div {
+            background: #000;
+            mix-blend-mode: multiply;
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        main::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 55% 55%,
+                    hsl(0, 100%, 50%),
+                    hsl(30, 100%, 50%),
+                    hsl(60, 100%, 50%),
+                    hsl(140, 100%, 50%),
+                    hsl(190, 100%, 50%),
+                    hsl(260, 100%, 50%),
+                    hsl(330, 100%, 50%)40%);
+            animation: subtle 9000ms infinite linear;
+        }
+
+        path {
+            stroke-width: 1px;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 300px;
+            animation: dash 10000ms -10000ms infinite alternate ease-in-out,
+                w 7200ms -7200ms infinite alternate ease-in-out;
+        }
+
+        @keyframes dash {
+            100% {
+                stroke-dashoffset: -298px;
+            }
+        }
+
+        @keyframes w {
+            100% {
+                stroke-width: 12px;
+            }
+        }
+
+        @keyframes subtle {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main></main>
+    <div id="run">
+        <svg width="150" height="150" viewBox="0 0 150 150">
+            <g transform="translate(100 100)">
+                <path transform="translate(-75 -75)" stroke="white" stroke-width="10" fill="none"
+                    d="M92.71,7.27L92.71,7.27c-9.71-9.69-25.46-9.69-35.18,0L50,14.79l-7.54-7.52C32.75-2.42,17-2.42,7.29,7.27v0 c-9.71,9.69-9.71,25.41,0,35.1L50,85l42.71-42.63C102.43,32.68,102.43,16.96,92.71,7.27z">
+                </path>
+            </g>
+        </svg>
+    </div>
+
+</body>
+
+</html>
